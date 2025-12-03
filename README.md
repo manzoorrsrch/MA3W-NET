@@ -132,10 +132,11 @@ splits_5fold_seed42.json
 Splits are stratified by tumor size tertiles.
 
 2️⃣ Preprocess Into .npy Cache (Fast I/O)
+```
 python src/data/preprocess_npy.py \
     --index data_index/brats2023_index.csv \
     --cache cache_npy/
-
+```
 
 This script performs:
 
@@ -152,6 +153,7 @@ Save modalities as .npy
 Save meta information
 
 3️⃣ Train MA3W-Net (Fold Example: 4)
+```
 python src/training/train_single_cycle.py \
     --model m3a \
     --fold 4 \
@@ -159,7 +161,7 @@ python src/training/train_single_cycle.py \
     --epochs 80 \
     --patch 112
 
-
+```
 Or using the convenience script:
 
 bash scripts/run_training.sh m3a fold=4 cycle=1
@@ -178,17 +180,19 @@ DynUNet (nnU-Net-like)
 bash scripts/run_training.sh dynunet fold=4 cycle=1
 
 5️⃣ Full-Volume Inference
+```
 python src/inference/infer_sliding.py \
     --case BraTS-GLI-00000-000 \
     --model m3a \
     --fold 4
-
+```
 6️⃣ Visualization
+```
 python src/inference/visualize_case.py \
     --case BraTS-GLI-00000-000 \
     --slice 80 \
     --fold 4
-
+```
 
 Displays:
 
@@ -205,7 +209,7 @@ bash scripts/run_evaluation.sh
 
 
 Outputs:
-
+```
 out_eval/
    ├── MA3WNet/perfold_summary.csv
    ├── UNet3D/perfold_summary.csv
@@ -213,7 +217,7 @@ out_eval/
    ├── TriEnsemble/perfold_summary.csv
    ├── all_methods_perfold_summary.csv
 
-
+```
 Metrics:
 
 Dice (NCR, ED, ET)
@@ -227,7 +231,7 @@ ET, TC, WT composites
 All trained model weights are available here:
 
 🔗 Google Drive Checkpoints
-https://drive.google.com/drive/folders/YOUR_FOLDER_ID
+#WILL BE SHARED ON REQUEST write to- manzoor.rsrch@gmail.com#
 
 Contains:
 
