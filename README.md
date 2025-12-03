@@ -92,7 +92,7 @@ Download (Kaggle mirror):
 🔗 https://www.kaggle.com/datasets/bhavesh907/bra-ts-2023-dataset
 
 Structure:
-
+```
 BraTS2023/
    ├── brats2023/
        ├── BraTS-GLI-00000-000/
@@ -101,7 +101,7 @@ BraTS2023/
            ├── BraTS-GLI-00000-000-t2w.nii.gz
            ├── BraTS-GLI-00000-000-t2f.nii.gz
            ├── BraTS-GLI-00000-000-seg.nii.gz
-
+```
 ⚙️ Installation
 conda create -n ma3w python=3.10 -y
 conda activate ma3w
