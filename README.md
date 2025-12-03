@@ -50,6 +50,9 @@ Full-volume predictions
 Optional test-time augmentation
 
 📦 Repository Structure
+## 📦 Repository Structure
+
+```
 MA3W-Net/
 │── src/
 │   ├── data/
@@ -70,10 +73,17 @@ MA3W-Net/
 │       └── eval_folds.py
 │
 │── scripts/
-│── cache_npy/        # preprocessed cases
-│── runs/             # checkpoints + logs
-│── out_eval/         # per-fold results
+│   ├── run_training.sh
+│   ├── run_evaluation.sh
+│   └── setup_env.sh
+│
+│── cache_npy/             # Preprocessed volume cache (generated)
+│── runs/                  # Trained checkpoints + logs (generated)
+│── out_eval/              # Evaluation outputs (generated)
+│── data_index/            # Dataset index + splits (generated)
+│── requirements.txt
 │── README.md
+```
 
 
 📥 Dataset: BraTS-2023 (GLI)
