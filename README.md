@@ -49,7 +49,7 @@ Full-volume predictions
 
 Optional test-time augmentation
 
-📦 Repository Structure
+
 ## 📦 Repository Structure
 
 ```
