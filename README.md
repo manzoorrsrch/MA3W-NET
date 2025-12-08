@@ -1,9 +1,9 @@
-🧠 MA3W-Net: Multi-Attention Multi-Scale 3D Network for Brain Tumor Segmentation (BraTS-2023)
+MA3W-Net: Multi-Attention Multi-Scale 3D Network for Brain Tumor Segmentation (BraTS-2023)
 
 This repository contains the official implementation of MA3W-Net / M3A-NeuroSeg, a hybrid attention-powered 3D segmentation architecture developed for BraTS-2023 Glioma MRI segmentation.
 It includes full preprocessing, training, inference, evaluation pipelines and baselines for fair comparison.
 
-🔥 Highlights
+Highlights:
 
 Multi-Attention fusion
 
@@ -231,7 +231,15 @@ ET, TC, WT composites
 All trained model weights are available here:
 
 🔗 Google Drive Checkpoints
-#WILL BE SHARED ON REQUEST write to- manzoor.rsrch@gmail.com#
+#WILL BE SHARED ON REQUEST write to- manzoor.rsrch@gmail.com### Model Checkpoints
+
+The trained model checkpoints for MA3W-Net, 3D U-Net, DynUNet, and the tri-ensemble setting are large and are therefore not included directly in this repository.
+
+Researchers who wish to access the pretrained weights for verification, benchmarking, or further experimentation may request them by contacting the corresponding author at:
+
+**Email:** manzoor.rsrch@gmail.com
+
+The full training and inference code, along with dataset preparation scripts, is provided in this repository to support complete reproducibility of the experiments reported in the manuscript.
 
 Contains:
 
@@ -247,15 +255,21 @@ Place them into:
 
 runs/<model>_brats2023_fold4_cycle1/best.pt
 
-📊 Example MA3W-Net Performance (Fold: 4)
-Class	Dice	HD95
-NCR/NET	0.XX	XX.X
-ED	0.XX	XX.X
-ET	0.XX	XX.X
-Mean	0.XX	XX.X
+📊 Example MA3W-Net Performance (on Fold: 4 and 5fold mean on ensemble)
 
-(Replace with your actual computed results.)
-
+```
+Method	                     Dice Mean	      Dice ET	   Dice TC	   Dice WT	   HD95 Mean
+UNet3D	                     0.8189 ± 0.0124	0.8596	   0.9031	   0.9250	   5.1464
+DynUNet	                     0.8527 ± 0.0088	0.8786	   0.9318	   0.9434	   3.8234
+MA3W-Net	                     0.8389 ± 0.0101	0.8735	   0.9166	   0.9341	   4.3774
+MA3W-Net+TTA	               0.845±0.01	      0.880±0.005	0.922±0.006	0.937±0.005	4.10±0.15
+Conv-Ensemble (UNet3+DynUNet)	0.860±0.008	      0.885±0.01	0.933±0.009	0.947±0.005	3.8±0.3
+Tri-Ensemble 
+(UNet3D+DynUNet+MA3W-Net)	   0.870±0.008	      0.892±0.01	0.938±0.009	0.952±0.005	3.6±0.3
+Tri-Ensemble+ TTA	            0.875±0.01	      0.900±0.008	0.944±0.006	0.955±0.005	3.4–±0.3
+Tri-Ensemble 5Fold Avg.      	0.8760            0.9019	   0.9379	   0.9456		3.64
+(U-Net + DynUNet + MA3W-Net)
+```
 🧠 MA3W-Net Architecture
 
 Key components:
