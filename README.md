@@ -89,7 +89,7 @@ MA3W-Net/
 📥 Dataset: BraTS-2023 (GLI)
 
 Download (Kaggle mirror):
-🔗 https://www.kaggle.com/datasets/bhavesh907/bra-ts-2023-dataset
+🔗 (https://www.synapse.org/Synapse:syn51156910)
 
 Structure:
 ```
@@ -255,7 +255,7 @@ Place them into:
 
 runs/<model>_brats2023_fold4_cycle1/best.pt
 
-📊 Example MA3W-Net Performance (on Fold: 4 and 5fold mean on ensemble)
+📊  MA3W-Net Performance (on Fold: 4 and 5-fold mean on ensemble)
 
 ```
 Method	                     Dice Mean	      Dice ET	   Dice TC	   Dice WT	   HD95 Mean
@@ -267,7 +267,7 @@ Conv-Ensemble (UNet3+DynUNet)	0.860±0.008	      0.885±0.01	0.933±0.009	0.947�
 Tri-Ensemble 
 (UNet3D+DynUNet+MA3W-Net)	   0.870±0.008	      0.892±0.01	0.938±0.009	0.952±0.005	3.6±0.3
 Tri-Ensemble+ TTA	            0.875±0.01	      0.900±0.008	0.944±0.006	0.955±0.005	3.4–±0.3
-Tri-Ensemble 5Fold Avg.      	0.8760            0.9019	   0.9379	   0.9456		3.64
+Tri-Ensemble 5Fold Mean      	0.8760            0.9019	   0.9379	   0.9456		3.64
 (U-Net + DynUNet + MA3W-Net)
 ```
 🧠 MA3W-Net Architecture
